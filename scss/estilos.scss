@@ -1,0 +1,383 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
+
+$primary : #f8f7f7;
+@import "bootstrap";
+$font-weight-bold: 700;
+$h3-font-size:1.20rem;
+$p-font-size:0.9rem;
+$dark: $gray-900;
+$color-oferta: #ea2840;
+$bg_primario:#f50;
+$bg_primario_oscuro:#d94800;
+
+*{
+    margin: 0;
+    padding: 0;
+} 
+
+.logo{
+    height: 40px;
+    width: 91px;
+    filter: hue-rotate(120deg) brightness(200%);
+}
+
+
+.carrito{
+    width: 50px;
+    filter: hue-rotate(120deg) brightness(500%);
+}
+
+h3{
+    font-weight: $font-weight-bold;
+    font-size: $h3-font-size;
+    color:  $primary;
+}
+h6{
+    color: $color-oferta
+}
+p{
+    font-size: $p-font-size;
+    color: $primary;
+
+}
+
+.cards1{
+    background-color: $dark;
+}
+
+.card2,
+.card3
+{
+    border: 0px;
+ 
+}
+
+.card-img-top{
+    width: 80px;
+ 
+}  
+
+
+.ofertas{
+    width:200px;
+}
+
+.cajax{
+    border:1px solid #babacc;
+        &:hover{
+            -webkit-box-shadow: -1px 0px 11px -1px rgba(35,43,28,1);
+            -moz-box-shadow: -1px 0px 11px -1px rgba(35,43,28,1);
+            box-shadow: -1px 0px 11px -1px rgba(35,43,28,1);
+            transition-duration: 1s;
+        }
+}
+
+@mixin flexible ($dis, $direction, $corte, $just, $align){
+    display : $dis;
+    flex-flow : $direction $corte;
+    justify-content: $just;
+    align-items : $align
+}
+
+.flex{
+    gap:10px;
+    @include flexible( flex, row, nowrap, center, center)
+}
+
+
+.fondo-oferta{
+    background-color: $dark;
+}
+
+
+
+
+
+@mixin mv( $media : 346px){
+    @media screen and (max-width: $media){
+        @content;
+    }
+}
+
+.carrusel {
+    width:100%;
+    @include mv(768px){ 
+        height: 200px ;
+    }
+    @include mv(576px){ height:200px !important;}
+    @include mv(480px){width: 100%;height:120px !important; }
+    @include mv(){  height:100px !important;}
+  }
+
+.cajas1{
+    display: flex;
+    flex-direction: row;
+  
+}
+
+.ofertas{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start ;
+    gap: 10px;
+}
+
+.flex-item{
+    width: 200px;
+}
+
+.vermasx{
+    display: inline-flex;
+    align-items: center;
+   
+
+}
+.vermas{    
+    color: #f50;
+    font-size: .9rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+    text-decoration: underline;
+    &:hover{
+        color: rgb(173, 60, 4);
+    }
+}
+
+
+/****PRODUCTO***/
+
+.bgproducto{
+    background-color: #ededed;
+}
+
+.bgmain{
+    background-color: #fff;
+    padding: 20px;
+}
+.nombreprod{
+    font-weight: bold;
+    color: #000;
+}
+
+.precio{
+    font-weight: bold;
+    color: #ea2840;
+    font-size: 1.4rem;
+}
+
+ .o2{
+    border: 1px solid rgba(134, 133, 133, 0.548);
+    border-radius: 5px;
+}
+
+.o1{
+    text-align: center;
+}
+
+.caracteristicas{
+    display: flex;
+    justify-content: center;
+}
+.form_campo{
+    border: 1px solid $bg_primario_oscuro;
+    background-color: transparent;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.form_campo option{
+    color:$bg_primario_oscuro
+}
+.form_submit{
+    background-color: #f50;
+    border: none;
+    font-size: 1.2rem;
+    padding: 1rem;
+    transition: background-color 2s ease;
+    color: #fff;
+    font-weight: bolder;
+    border-radius: 5px;
+    width: 72%;
+}
+
+.form_submit:hover{
+  cursor: pointer;
+  background-color: $bg_primario_oscuro;
+}
+
+.original-price {
+    color: #aaa;
+    font-size: .9rem;
+    font-weight: 400;
+    line-height: 1.3rem;
+    text-decoration: line-through;
+  }
+  .discount {
+    color: #333;
+    font-size: .9rem;
+    font-weight: 400;
+    line-height: 1.3rem;
+  }
+
+  .carrito-envio{
+    width:25px;
+  }
+
+  .texto_envio{
+    font-size: 1rem;
+    color: #000;
+  }
+
+  .texto_envio-gris{
+    color: #aaa !important;
+  }
+
+
+  
+  /**acordeon**/
+  ul.lista {list-style-position:outside;}
+
+  .accordion-button-negrita{
+    font-weight: bolder;
+    font-size: 1.2rem;
+  }
+
+  .accordion-button:not(.collapsed) {
+    color: #f50 !important;
+  }
+
+
+  .pacordion{
+    color: $black;  
+  }
+
+  a{
+    color:#f50 !important;
+  }
+
+  .cmr-request-card-icon{
+    font-weight: bolder;
+    font-size: 2.5rem;
+    font-family: 'Poor Story', cursive;
+    
+  }
+
+.cmrcolor{
+    color: #399624;
+    &:hover{
+        color: #ededed;
+        background-color: #399624;
+    }
+}
+  
+  .cmrbox{
+    color: #399624;
+    border: 1px solid #399624;
+    &:hover{
+        color: #ededed;
+        background-color: #399624;
+    }
+  }
+
+  .gridmpagos{
+    display: grid;
+    grid-template-columns: repeat(4 , 0.13fr);
+  }
+
+  .icon{
+    width:25px;
+  }
+
+  .flexito{
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+        &:hover{
+            color: #f50;
+        }
+  }
+
+  .texto_cliente{
+    color: #666;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1rem;
+    &:hover{
+        color: #f50;
+    }
+  }
+
+  /***FOOTER***/
+
+  .text-footer1{
+    text-decoration: none;
+  }
+
+  .text-footer2{
+    color: #666;
+    font-size: 0.8rem;
+    text-decoration: none;
+
+  }
+  .flex-container{
+    display: flex;
+    flex-direction: column;
+    padding-left: 100px;
+  }
+  
+ .flexfooter{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px 80px 10px 80px;
+    flex-wrap: wrap;
+ }
+
+ @media only screen and (max-width: 576px) {
+    .flexfooter{
+        display: flex;
+        flex-direction: column;
+        padding: 0px;
+        justify-content: center;
+        align-content: center;
+        margin: 0;
+        width: 100%;
+     }
+     .flex-container{
+        width: 100% !important;
+        padding-left: 0px;
+     }
+     .text-footer1{
+        display: flex;
+        justify-content: center;
+      }
+    
+      h8{
+        display: flex;
+        justify-content: center;
+    
+      }
+    
+ }
+
+
+ @media only screen and (max-width: 780px) {
+    .flex-container{
+        padding-left: 0px;
+     }
+ }
+
+ @media only screen and (max-width: 1080px) {
+    .flex-container{
+        padding-left: 0px;
+     }
+ }
+ hr {
+    margin: 0rem 0;
+    color: inherit;
+    border: 0;
+    border-top: 1px solid;
+    opacity: 0.25;
+}
