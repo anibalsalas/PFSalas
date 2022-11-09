@@ -8391,14 +8391,14 @@ textarea.form-control-lg {
   margin: 0;
   padding: 0; }
 
-.logo {
-  height: 40px;
-  width: 91px;
-  filter: hue-rotate(120deg) brightness(200%); }
+.logolino {
+  align-self: center; }
 
 .carrito {
-  width: 50px;
-  filter: hue-rotate(120deg) brightness(500%); }
+  width: 30px;
+  height: 30px;
+  filter: hue-rotate(620deg) brightness(900%);
+  align-self: center; }
 
 h3, .h3 {
   font-weight: 700;
@@ -8672,3 +8672,76 @@ hr {
   border: 0;
   border-top: 1px solid;
   opacity: 0.25; }
+
+/****LOGIN****/
+footer {
+  position: relative;
+  width: 100%;
+  height: 205px; }
+
+.form-control {
+  box-shadow: none;
+  border-color: #ddd; }
+
+.form-control:focus {
+  border-color: #4aba70; }
+
+.login-form {
+  width: 350px;
+  margin: 0 auto;
+  padding: 30px 0; }
+
+.login-form form {
+  color: #434343;
+  border-radius: 1px;
+  margin-bottom: 15px;
+  background: #fff;
+  border: 1px solid #f3f3f3;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  padding: 30px; }
+
+.login-form h4, .login-form .h4 {
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 20px; }
+
+.login-form .form-group {
+  margin-bottom: 20px; }
+
+.login-form .form-control, .login-form .btn {
+  min-height: 40px;
+  border-radius: 2px;
+  transition: all 0.5s; }
+
+.login-form .close {
+  position: absolute;
+  top: 15px;
+  right: 15px; }
+
+.btn-security {
+  width: 100%;
+  color: #fff;
+  background-color: #f50;
+  border-color: #f50;
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: initial; }
+
+.login-form .btn:hover, .login-form .btn:focus {
+  background: #d14600;
+  color: #fff; }
+
+.login-form .checkbox-inline {
+  float: left; }
+
+.login-form input[type="checkbox"] {
+  margin-top: 2px; }
+
+.login-form .forgot-link {
+  float: right; }
+
+.login-form .small {
+  font-size: 13px; }
+
+.login-form a {
+  color: #4aba70; }
