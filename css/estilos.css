@@ -8684,7 +8684,7 @@ footer {
   border-color: #ddd; }
 
 .form-control:focus {
-  border-color: #4aba70; }
+  border-color: #df6514; }
 
 .login-form {
   width: 350px;
@@ -8745,3 +8745,18 @@ footer {
 
 .login-form a {
   color: #4aba70; }
+
+/***promo***/
+.img-col-s {
+  width: 367px;
+  height: 242px; }
+
+.img-col-l {
+  width: 523px;
+  height: 242px; }
+
+.imgpromo {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  padding: 2px; }
