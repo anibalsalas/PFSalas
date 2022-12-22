@@ -244,5 +244,13 @@
     "watch-css": "nodemon -e scss -x \"npm run build-css\""
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anibalsalas/PFSalas.git"
+  },
+  "bugs": {
+    "url": "https://github.com/anibalsalas/PFSalas/issues"
+  },
+  "homepage": "https://github.com/anibalsalas/PFSalas#readme"
 }
