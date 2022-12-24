@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poor+Story&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap");
 /*!
    * Bootstrap  v5.2.2 (https://getbootstrap.com/)
    * Copyright 2011-2022 The Bootstrap Authors
@@ -8406,7 +8406,9 @@ h3, .h3 {
   color: #f8f7f7; }
 
 h6, .h6 {
-  color: #ea2840; }
+  color: #707070;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 400; }
 
 p {
   font-size: 0.9rem;
@@ -8781,21 +8783,39 @@ footer {
 
 .u-full-width {
   width: 100%;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px; }
+
+.u-full-width th,
+.u-full-width td {
+  padding: 12px 15px; }
+
+.u-full-width tbody tr {
+  border-bottom: 1px solid #dddddd; }
 
 .car {
-  display: none;
+  display: block;
   position: absolute;
   right: -150px;
   top: 100%;
-  z-index: 1;
+  z-index: 99;
   background-color: white;
   padding: 20px;
-  min-height: 400px;
   min-width: 300px;
   border-radius: 10px;
   box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.35);
-  color: #333; }
+  color: black; }
+
+.car-modal {
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 700;
+  padding: 15px;
+  border-bottom: 1px solid #707070;
+  color: #000; }
 
 .input {
   display: flex;
@@ -8855,6 +8875,21 @@ footer {
   padding: 0 10px;
   text-decoration: none;
   width: 100%;
+  height: 30px;
+  align-content: center;
+  display: grid;
+  justify-content: center; }
+
+.car-vercarrito {
+  background-color: #00a559;
+  color: white !important;
+  font-size: 0.9em;
+  font-weight: 700;
+  border-radius: 5px;
+  padding: 0 10px;
+  text-decoration: none;
+  width: 100%;
+  height: 35px;
   align-content: center;
   display: grid;
   justify-content: center; }
