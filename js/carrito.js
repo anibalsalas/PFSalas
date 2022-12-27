@@ -65,8 +65,23 @@ function leerDatosProducto(producto){
         id: producto.querySelector('a').getAttribute('data-id'),
         cantidad: 1
     }
+    //Revisa si  ya existe en el carrito
+    const existe = articuloCarrito.some( producto => producto.titulo === infoProducto.titulo );
+    if(existe){
+        const productos = articuloCarrito.map( producto =>{
+            if(producto.titulo === infoProducto.titulo){
+                producto.cantidad++;
+                return producto; //retorna el objeto actualizado
+            } else {
+                return producto;//retorna los objetos que no son los duplicados
+            }
+        });
+        articuloCarrito = [...productos];
+    }else {
+        articuloCarrito = [...articuloCarrito, infoProducto];
+
+    }
     //agrega elementos al arreglo del carrito
-    articuloCarrito = [...articuloCarrito, infoProducto];
     console.log(articuloCarrito);
     carritoHTML();
 }
@@ -79,20 +94,24 @@ function carritoHTML(){
     limpiaHTML();
     //Recorre el carrito y genera el HTML
     articuloCarrito.forEach( producto =>{
+        const { imagen, titulo, precio, cantidad, id } = producto;
         const row = document.createElement('tr');
         row.innerHTML = `
         <td>
-            <img src="${producto.imagen}" width="100">
+            <img src="${imagen}" width="100">
         </td>
         <td>
-            ${producto.titulo}
+            ${titulo}
          </td>
         <td>
-            ${producto.precio}
+            ${precio}
         </td>
          <td>
-            ${producto.cantidad}
+            ${cantidad}
         </td>
+        <td>
+            <a href="#" class='borrar-curso' data-id='${id}' > X </a>
+         </td>
         `;
 
         //Agrega el HTML del carrito en el tbody
