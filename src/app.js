@@ -12,7 +12,7 @@ const pintarProductos = () => {
              </div>
              <div class="card text-center flex" >
               <a href="pages/producto.html" class="ver__producto">Ver Producto</a>
-              <a href="#" class="add__producto" data-id="${producto.id}"><img src="public/img/car.png" alt=""> Agregar</a>
+              <a href="#" class="add__producto" id="${producto.id}"><img src="public/img/car.png" alt=""> Agregar</a>
              </div>
         `
         contenedor.appendChild(div)

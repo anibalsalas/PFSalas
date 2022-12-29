@@ -36,7 +36,7 @@ let articuloCarrito = []
 cargarEventListeners()
 function cargarEventListeners(){
     listaProductos.addEventListener('click', agregarProducto);
-    carrito.addEventListener('click', deleteProducto);
+   // carrito.addEventListener('click', deleteProducto);
 
 }
 // const cargarEventListeners = () => {
@@ -59,7 +59,7 @@ function deleteProducto(e){
     //console.log(e.target.classList);
      if(e.target.classList.contains('borrar-producto')){
        
-        const productoID = e.target.getAttribute('data-id');
+        const productoID = e.target.getAttribute('id');
 //Elimino del array de articuloCarrito por el data-id
         articuloCarrito = articuloCarrito.filter(producto => producto.id === productoID);
         carritoHTML();//itera sobre el carrito y muestra su HTML
@@ -77,7 +77,7 @@ function leerDatosProducto(producto){
         imagen: producto.querySelector('img').src,
         titulo: producto.querySelector('h5').textContent,
         precio: producto.querySelector('h4').textContent,
-        id: producto.querySelector('a').getAttribute('data-id'),
+        id: producto.querySelector('a').getAttribute('id'),
         cantidad: 1
     }
     //Revisa si  ya existe en el carrito
@@ -123,10 +123,11 @@ const pintarTotalesCarrito = (totalCantidad, totalCompra) => {
     precioTotal.innerText = totalCompra;
 };
 
+
+
 //Muestra el carrito de compras en el HTML
 
 function carritoHTML(){
-
     //Limpia HTML
     limpiaHTML();
     //Recorre el carrito y genera el HTML
@@ -148,15 +149,15 @@ function carritoHTML(){
            <p id = cantidad${id} class="texto-cantidad"> Cantidad : ${cantidad}</p>
         </td>
         <td>
-            <a href="#" class='borrar-producto'  data-id=${id} > X </a>
+            <button href="#" class='borrar-producto' id=${id} > X </button>
          </td>
 
        
         `;
-
+        console.log(producto)
         //Agrega el HTML del carrito en el tbody
         contenedorCarrito.appendChild(row);
-
+       
     });
 
     //Elimina los productos del tbody

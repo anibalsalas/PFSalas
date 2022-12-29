@@ -8804,6 +8804,7 @@ footer {
     }  */
 
     .car{
+      display: block;
       position: fixed;
       top:0;
       border-top: 0 none;
@@ -8823,12 +8824,12 @@ footer {
       overflow-y: auto;
     }
 
-   
 
-    .car.active{
+    .active{
       right: 0;
     }
 
+   
     .total{
       display: flex;
       justify-content: flex-start;
@@ -8998,6 +8999,13 @@ footer {
   display: flex;
   align-items: center; }
 
+  .borrar-producto:hover {
+    cursor: pointer;
+  }
+  
+  .borrar-producto:focus {
+    outline: none;
+  }
 
   #lista-productos {
     display: grid;
@@ -9035,4 +9043,5 @@ footer {
   color: rgb(225, 76, 65) !important;
   border: none;
   background-color: white;
+  cursor: pointer;
 }

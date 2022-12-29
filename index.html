@@ -64,10 +64,12 @@
                                         <li id="cesta" class="nav-item d-flex justify-content-center header__cart">
                                           <!-- <div class="header__cart--noti">3</div> -->
                                           <button id="cesta-carrito"><span id="contador-carrito">0</span></button>
-                                            <img    class="carrito " src="public/img/carrito.png" alt="carrito">
+                                            <img    class="carrito " onclick="opencarrito('carrito')" src="public/img/carrito.png" alt="carrito">
                                          
                                                 <div id="carrito" class="car ">
-                                                          <button  id="btn-cerrar-carrito">x</button>
+                                                          <button  id="btn-cerrar-carrito" onclick="cerrarcarrito('carrito')">x</button>
+                                                          <!-- <span class="boton" onclick="cerraranuncio('primeranuncio')">x</span> -->
+                                                          
                                                           <p class="car-modal">Mi Carrito</p>
 
                                                           <table id="lista-carrito" class="u-full-width">

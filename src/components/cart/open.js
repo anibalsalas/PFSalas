@@ -1,20 +1,16 @@
-const abrirCarrito = document.querySelector('#cesta');
-const cart = document.querySelector('.car')
-const cerrarCarrito = document.querySelector('#btn-cerrar-carrito');
+    const abrirCarrito = document.querySelector('#cesta');
+    const cart = document.querySelector('.car')
 
 
+    abrirCarrito.onclick = () => {
+        cart.classList.add('active');
+    };
 
 
-abrirCarrito.onclick = () => {
-    cart.classList.add('active');
-};
+  const cerrarcarrito = car => {
+    document.getElementById(car).style.display = "none";
+  }
 
-
-
-cerrarCarrito.onclick = () => {
-    cart.classList.remove('active');
-};
-// cerrarCarrito.addEventListener('click', () => {
-//     cart.classList.remove('active');
-// });
-
+  const opencarrito = car => {
+    document.getElementById(car).style.display = "block";
+  }
