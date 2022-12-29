@@ -57,11 +57,11 @@ function agregarProducto(e){
 function deleteProducto(e){
     //console.log(e.target.classList);
      if(e.target.classList.contains('borrar-producto')){
-        console.log(e.target.id);
-        //const productoID = e.target.getAttribute('data-id');
+       
+        const productoID = e.target.getAttribute('data-id');
 //Elimino del array de articuloCarrito por el data-id
-        // articuloCarrito = articuloCarrito.filter(producto => producto.id === productoID);
-        // carritoHTML();//itera sobre el carrito y muestra su HTML
+        articuloCarrito = articuloCarrito.filter(producto => producto.id === productoID);
+        carritoHTML();//itera sobre el carrito y muestra su HTML
      }
 }
 
@@ -108,24 +108,24 @@ function carritoHTML(){
     limpiaHTML();
     //Recorre el carrito y genera el HTML
     articuloCarrito.forEach( producto =>{
-       // const { imagen, titulo, precio, cantidad } = producto;     
+       const { imagen, titulo, precio, cantidad, id} = producto;     
         const row = document.createElement('tr');
         row.innerHTML = `
         
         <td class ="td-carrito">
-            <img src="${producto.imagen}" width="60">
+            <img src="${imagen}" width="60">
         </td>
         <td class="td-carrito texto-titulo">
-            ${producto.titulo}
+            ${titulo}
          </td>
         <td class ="td-carrito">
-            ${producto.precio}
+            ${precio}
         </td>
          <td class ="td-carrito">
-           <p id = cantidad${producto.id} class="texto-cantidad"> Cantidad : ${producto.cantidad}</p>
+           <p id = cantidad${id} class="texto-cantidad"> Cantidad : ${cantidad}</p>
         </td>
         <td>
-            <a href="#" class='borrar-producto'  data-id='${producto.id}' > X </a>
+            <a href="#" class='borrar-producto'  data-id='${id}' > X </a>
          </td>
         `;
 
