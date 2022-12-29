@@ -44,6 +44,7 @@ function cargarEventListeners(){
 // }
 
 //FUNCIONES
+//Agrega producto al carrito
 function agregarProducto(e){
     e.preventDefault();
 
@@ -85,20 +86,42 @@ function leerDatosProducto(producto){
         const productos = articuloCarrito.map( producto =>{
             if(producto.titulo === infoProducto.titulo){
                 producto.cantidad++;
+                actualizarTotalesCarrito(articuloCarrito);
                 return producto; //retorna el objeto actualizado
+                
             } else {
                 return producto;//retorna los objetos que no son los duplicados
+                
             }
         });
         articuloCarrito = [...productos];
+        
     }else {
         articuloCarrito = [...articuloCarrito, infoProducto];
+        actualizarTotalesCarrito(articuloCarrito);
 
     }
     //agrega elementos al arreglo del carrito
     console.log(articuloCarrito);
     carritoHTML();
 }
+//TOTAL CARRITO
+
+const actualizarTotalesCarrito = (articuloCarrito) => {
+    const totalCantidad = articuloCarrito.reduce((acc, item) => acc + item.cantidad, 0);
+    const totalCompra = articuloCarrito.reduce((acc, item) => acc + (item.precio * item.cantidad), 0);
+
+    pintarTotalesCarrito(totalCantidad, totalCompra);
+    guardarCarritoStorage(carrito);
+};
+
+const pintarTotalesCarrito = (totalCantidad, totalCompra) => {
+    const contadorCarrito = document.getElementById('contador-carrito');
+    const precioTotal = document.getElementById('precioTotal');
+
+    contadorCarrito.innerText = totalCantidad;
+    precioTotal.innerText = totalCompra;
+};
 
 //Muestra el carrito de compras en el HTML
 
@@ -125,8 +148,10 @@ function carritoHTML(){
            <p id = cantidad${id} class="texto-cantidad"> Cantidad : ${cantidad}</p>
         </td>
         <td>
-            <a href="#" class='borrar-producto'  data-id='${id}' > X </a>
+            <a href="#" class='borrar-producto'  data-id=${id} > X </a>
          </td>
+
+       
         `;
 
         //Agrega el HTML del carrito en el tbody
@@ -143,3 +168,12 @@ function carritoHTML(){
         }
     }
 }
+
+const guardarCarritoStorage = (articuloCarrito) => {
+    localStorage.setItem('articuloCarrito', JSON.stringify(articuloCarrito));
+};
+
+const obtenerCarritoStorage = () => {
+    const carritoStorage = JSON.parse(localStorage.getItem('articuloCarrito'));
+    return carritoStorage;
+};

@@ -1,4 +1,4 @@
-const abrirCarrito = document.querySelector('#cesta-carrito');
+const abrirCarrito = document.querySelector('#cesta');
 const cart = document.querySelector('.car')
 const cerrarCarrito = document.querySelector('#btn-cerrar-carrito');
 

@@ -8767,9 +8767,10 @@ footer {
 .header__cart {
   position: relative; }
 
-  .header__cart--noti {
-    display: none;
+  #cesta-carrito {
+    /* display: none; */
     background-color: #00a559;
+    transition: all .3s;
     width: 19px;
     height: 17px;
     border-radius: 17px;
@@ -8839,7 +8840,7 @@ footer {
       font-weight: 600;
     }
 
-    .total-price{
+    .precioProducto{
       margin-left: 0.5rem;
     }
 

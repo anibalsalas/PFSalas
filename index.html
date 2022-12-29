@@ -61,9 +61,11 @@
                                         <a class="nav-link active text-white" aria-current="page" href="pages/login.html">Acceder / Resgistrarse</a>
                                         </li>
                                         
-                                        <li id="cesta-carrito" class="nav-item d-flex justify-content-center header__cart">
-                                          <div class="header__cart--noti">3</div>
-                                          <img    class="carrito " src="public/img/carrito.png" alt="carrito">
+                                        <li id="cesta" class="nav-item d-flex justify-content-center header__cart">
+                                          <!-- <div class="header__cart--noti">3</div> -->
+                                          <button id="cesta-carrito"><span id="contador-carrito">0</span></button>
+                                            <img    class="carrito " src="public/img/carrito.png" alt="carrito">
+                                         
                                                 <div id="carrito" class="car ">
                                                           <button  id="btn-cerrar-carrito">x</button>
                                                           <p class="car-modal">Mi Carrito</p>
@@ -78,8 +80,8 @@
                                                           </table>
                                                           <!-- <p class="precioProducto">Precio total: $<span id="precioTotal"></span></p> -->
                                                           <div class="total">
-                                                            <div class="total-title">SubTotal</div>
-                                                            <div class="total-price">$<span id="precioTotal"></span></div>
+                                                           
+                                                            <p class="precioProducto">SubTotal: $<span id="precioTotal"></span></p>
                                                           </div>
                                                           <!-- <i class="bx bx-x" id="close-cart"></i> -->
                                                           <a href="#" id="vaciar-carrito" class="button u-full-width">Vaciar Carrito</a>
