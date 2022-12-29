@@ -36,6 +36,8 @@ let articuloCarrito = []
 cargarEventListeners()
 function cargarEventListeners(){
     listaProductos.addEventListener('click', agregarProducto);
+    carrito.addEventListener('click', deleteProducto);
+
 }
 // const cargarEventListeners = () => {
 //     listaProductos.addEventListener('click', agregarProducto);
@@ -51,12 +53,24 @@ function agregarProducto(e){
     }
 }
 
+//Elimina producto del carrito
+function deleteProducto(e){
+    //console.log(e.target.classList);
+     if(e.target.classList.contains('borrar-producto')){
+        console.log(e.target.id);
+        //const productoID = e.target.getAttribute('data-id');
+//Elimino del array de articuloCarrito por el data-id
+        // articuloCarrito = articuloCarrito.filter(producto => producto.id === productoID);
+        // carritoHTML();//itera sobre el carrito y muestra su HTML
+     }
+}
+
 
 
 //Lee 
 function leerDatosProducto(producto){
   
-    console.log(producto)
+    //console.log(producto)
     //crea un objeto con el contenido actual
     const infoProducto = {
         imagen: producto.querySelector('img').src,
@@ -94,23 +108,24 @@ function carritoHTML(){
     limpiaHTML();
     //Recorre el carrito y genera el HTML
     articuloCarrito.forEach( producto =>{
-        const { imagen, titulo, precio, cantidad, id } = producto;
+       // const { imagen, titulo, precio, cantidad } = producto;     
         const row = document.createElement('tr');
         row.innerHTML = `
+        
         <td class ="td-carrito">
-            <img src="${imagen}" width="60">
+            <img src="${producto.imagen}" width="60">
         </td>
         <td class="td-carrito texto-titulo">
-            ${titulo}
+            ${producto.titulo}
          </td>
         <td class ="td-carrito">
-            ${precio}
+            ${producto.precio}
         </td>
          <td class ="td-carrito">
-           <p class="texto-cantidad"> Cantidad : ${cantidad}</p>
+           <p id = cantidad${producto.id} class="texto-cantidad"> Cantidad : ${producto.cantidad}</p>
         </td>
         <td>
-            <a href="#" class='borrar-curso' data-id='${id}' > X </a>
+            <a href="#" class='borrar-producto'  data-id='${producto.id}' > X </a>
          </td>
         `;
 
@@ -119,7 +134,7 @@ function carritoHTML(){
 
     });
 
-    //Elimina los cursos del tbody
+    //Elimina los productos del tbody
     function limpiaHTML(){
         //contenedorCarrito.innerHTML = '';
 

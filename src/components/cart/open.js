@@ -1,6 +1,7 @@
 const abrirCarrito = document.querySelector('#cesta-carrito');
 const cart = document.querySelector('.car')
-const cerrarCarrito = document.getElementById('close-cart');
+const cerrarCarrito = document.querySelector('#btn-cerrar-carrito');
+
 
 
 
@@ -9,9 +10,10 @@ abrirCarrito.onclick = () => {
 };
 
 
-cerrarCarrito.addEventListener('click', () => {
+
+cerrarCarrito.onclick = () => {
     cart.classList.remove('active');
-});
+};
 // cerrarCarrito.addEventListener('click', () => {
 //     cart.classList.remove('active');
 // });

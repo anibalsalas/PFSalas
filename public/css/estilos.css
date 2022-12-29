@@ -8985,7 +8985,7 @@ footer {
 .card-botom {
   margin-bottom: 12px; }
 
-.borrar-curso {
+.borrar-producto{
   background-color: #de0000 !important;
   padding: 8px;
   border-radius: 100%;
@@ -9025,3 +9025,13 @@ footer {
   .texto-cantidad{
     color: #000;
   }
+
+  .car #btn-cerrar-carrito {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 20px;
+  color: rgb(225, 76, 65) !important;
+  border: none;
+  background-color: white;
+}

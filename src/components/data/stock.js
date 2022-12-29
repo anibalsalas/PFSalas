@@ -19,7 +19,7 @@ const productos =
     },
 
     {
-        id: 3,
+        id: 1,
         marca: "LAYCONSA",
         desc: "Plastilina X 10 Puppy Layconsa",
         precio: 3.70,
